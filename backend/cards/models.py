@@ -12,6 +12,9 @@ class BaseModel(models.Model):
 class Deck(BaseModel):
     name = models.CharField(max_length=255, blank=False, null=False)
 
+    def __str__(self):
+        return self.name
+
 
 class Card(BaseModel):
     card_deck = models.ForeignKey(Deck, on_delete=models.CASCADE)

@@ -7,7 +7,7 @@ class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
         fields = (
-            'id',
+            'card_deck',
             'front',
             'back'
         )

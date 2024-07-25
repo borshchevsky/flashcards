@@ -1,4 +1,19 @@
 <template>
+  <div class="main">
+    <div class="row">
+      <div class="navbar">
+        <a class="logo" href="#">FlashCards</a>
+        <a href="#">Decks</a>
+        <a href="#">Settings</a>
+        <a href="#">About</a>
+        <a href="#">Log In</a>
+        <a href="#">Register</a>
+      </div>
+    </div>
+    <div class="row">
+      <DeckTable/>
+    </div>
+  </div>
   Decks:
   <div v-for="deck in data" :key="deck.id">
     <p href="">{{ deck.name }}</p>
@@ -15,6 +30,7 @@
 
 import { onMounted, ref } from "vue";
 import CardView from '@/components/CardView'
+import DeckTable from '@/components/DeckTable'
 const data = ref();
 const currentCardId = ref();
 
@@ -33,5 +49,34 @@ onMounted(async () => {
 <style>
 .cards-list:hover {
   cursor: default;
+}
+
+.main {
+  margin: 10px;
+  background: #fdfaff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.navbar a {
+  margin: 40px;
+}
+
+.navbar {
+  flex-direction: row;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
 </style>
