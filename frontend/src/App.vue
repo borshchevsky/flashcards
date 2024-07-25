@@ -3,15 +3,15 @@
     <div class="row">
       <div class="navbar">
         <a class="logo" href="#">FlashCards</a>
-        <a href="#">Decks</a>
+        <router-link to="decks">Decks</router-link>
         <a href="#">Settings</a>
-        <a href="#">About</a>
+        <router-link to="about">About</router-link>
         <a href="#">Log In</a>
         <a href="#">Register</a>
       </div>
     </div>
     <div class="row">
-      <DeckTable/>
+      <router-view/>
     </div>
   </div>
   Decks:
@@ -30,7 +30,6 @@
 
 import { onMounted, ref } from "vue";
 import CardView from '@/components/CardView'
-import DeckTable from '@/components/DeckTable'
 const data = ref();
 const currentCardId = ref();
 
